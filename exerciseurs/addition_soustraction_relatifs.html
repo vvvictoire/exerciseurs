@@ -4,10 +4,10 @@
     <title>Addition et soustraction de nombres relatifs</title>
 </head>
 <body>
-    <span id="terme_1"></span> <span id="operateur"></span> <span id="terme_2"></span> = <span id="resultat"></span><br>
-    <button id="reponse" onclick="reponse()">Réponse</button>
+    <span id='terme_1'></span> <span id='operateur'></span> <span id='terme_2'></span> = <span id='resultat'></span><br>
+    <button id='reponse' onclick='reponse()'>Réponse</button>
 </body>
-<script type="text/javascript">
+<script type='text/javascript'>
     function random_sign(number) {
         if (Math.random() >= 0.5) {
             return -1 * number;
@@ -21,28 +21,28 @@
         let terme_2 = random_sign(Math.floor(Math.random() * 10) + 1);
         let is_addition = null;
         let resultat = null;
-        document.getElementById("resultat").style.display = "none";
+        document.getElementById('resultat').style.display = 'none';
         if (Math.random() >= 0.5) {
             is_addition = true;
         }
         if (is_addition) {
             resultat = terme_1 + terme_2;
-            document.getElementById("operateur").innerHTML = "+";
+            document.getElementById('operateur').innerHTML = '+';
         }
         else {
             resultat = terme_1 - terme_2;
-            document.getElementById("operateur").innerHTML = "-";
+            document.getElementById('operateur').innerHTML = '-';
         }
-        document.getElementById("terme_1").innerHTML = "(" + terme_1 + ")";
-        document.getElementById("terme_2").innerHTML = "(" + terme_2 + ")";
-        document.getElementById("resultat").innerHTML = resultat;
-        document.getElementById("reponse").innerHTML = "Réponse";
-        document.getElementById("reponse").setAttribute("onclick", "reponse()");
+        document.getElementById('terme_1').innerHTML = '(' + terme_1 + ')';
+        document.getElementById('terme_2').innerHTML = '(' + terme_2 + ')';
+        document.getElementById('resultat').innerHTML = resultat;
+        document.getElementById('reponse').innerHTML = 'Réponse';
+        document.getElementById('reponse').setAttribute('onclick', 'reponse()');
     }
     function reponse() {
-        document.getElementById("resultat").style.display = "inline";
-        document.getElementById("reponse").innerHTML = "Calcul suivant";
-        document.getElementById("reponse").setAttribute("onclick", "initialise()");
+        document.getElementById('resultat').style.display = 'inline';
+        document.getElementById('reponse').innerHTML = 'Calcul suivant';
+        document.getElementById('reponse').setAttribute('onclick', 'initialise()');
     }
     window.onload = initialise();
 </script>
